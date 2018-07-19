@@ -9,8 +9,8 @@ library(robotstxt)
 
 paths_allowed("https://www.dogfoodadvisor.com/dog-food-reviews/dry/1-star/")
 
-# Step 1: Create links of dry dog food
-# REplace number 1 in 1-star for other rating(1-5)
+#Create links of dry dog food
+
 for(i in 1:5){
   base_url <- "https://www.dogfoodadvisor.com"
   pg_num <- paste0("dog-food-reviews/dry/",i,"-star/")
@@ -21,7 +21,7 @@ for(i in 1:5){
   
   #pages <- head(pages, 150) #for testing code
   
-  # Step 2 : Save food pages locally
+  #Save food pages locally
   
   # Create a directory to store downloaded pages
   data_dir <- paste0("R/",i)
@@ -36,7 +36,7 @@ for(i in 1:5){
     p$tick()$print()
   })
   
-  # Step 3: Process all food info into df 
+  #Process all food info into df 
   
   # Create a character vector of names of all files in directory
   files <- dir(data_dir,  full.names = TRUE)
